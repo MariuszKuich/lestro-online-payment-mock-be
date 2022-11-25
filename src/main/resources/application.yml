@@ -11,3 +11,5 @@ spring:
   h2:
     console:
       enabled: true
+mock-payment:
+  redirectUrl: http://localhost:4201/new

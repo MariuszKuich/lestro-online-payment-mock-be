@@ -13,14 +13,17 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 @Entity(name = "payments")
-public class PaymentsEntity {
+public class PaymentEntity {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "order_number", nullable = false)
-    private String orderNumber;
+    @Column(name = "payment_uuid", nullable = false, unique = true)
+    private String paymentUUID;
+
+    @Column(name = "order_number", nullable = false, unique = true)
+    private Long orderNumber;
 
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
