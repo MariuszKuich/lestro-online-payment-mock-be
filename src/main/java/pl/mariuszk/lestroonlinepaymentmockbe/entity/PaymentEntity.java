@@ -27,4 +27,7 @@ public class PaymentEntity {
 
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
+
+    @Column(name = "is_paid", nullable = false)
+    private boolean paid;
 }

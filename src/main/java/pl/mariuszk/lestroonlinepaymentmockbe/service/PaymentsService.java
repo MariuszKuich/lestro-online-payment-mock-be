@@ -20,13 +20,14 @@ public class PaymentsService {
                 .paymentUUID(UUID.randomUUID().toString())
                 .orderNumber(paymentDataDto.getOrderNumber())
                 .amount(paymentDataDto.getOrderValue())
+                .paid(false)
                 .build();
 
         return paymentsRepository.save(paymentEntity);
     }
 
     public Optional<PaymentDataDto> getPaymentInfo(String paymentUUID) {
-        return paymentsRepository.findByPaymentUUID(paymentUUID)
+        return paymentsRepository.findByPaymentUUIDAndPaidIsFalse(paymentUUID)
                 .map(paymentEntity -> PaymentDataDto.builder()
                         .orderNumber(paymentEntity.getOrderNumber())
                         .orderValue(paymentEntity.getAmount())
