@@ -13,3 +13,4 @@ spring:
       enabled: true
 mock-payment:
   redirectUrl: http://localhost:4201/new
+  shopPaymentUrl: http://localhost:50003/payment/save-payment

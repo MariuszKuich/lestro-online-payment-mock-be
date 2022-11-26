@@ -31,4 +31,14 @@ public class PaymentsController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
+
+    @PostMapping("/confirm-transfer/{paymentUUID}")
+    public ResponseEntity<Void> confirmTransfer(@PathVariable String paymentUUID) {
+        try {
+            paymentsService.confirmTransfer(paymentUUID);
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
 }

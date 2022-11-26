@@ -8,4 +8,5 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 public class ConfigProperties {
 
     private String redirectUrl;
+    private String shopPaymentUrl;
 }
