@@ -11,6 +11,7 @@ import pl.mariuszk.lestroonlinepaymentmockbe.service.PaymentsService;
 @RestController
 @RequestMapping("/payment-mock")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:4201")
 public class PaymentsController {
 
     private final PaymentsService paymentsService;
